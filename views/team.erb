@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
- <head>
-  <meta charset="UTF-8">
-  <title>Basketball Team</title>
- </head>
- <body>
- 
-
-
- </body>
+	<head>
+		<meta charset="UTF-8">
+		<title>Basketball Team</title>
+	</head>
+	<body>
+		<% @team_hash.each do |key, value| %>
+			<% key_name = key.split('_').map(&:capitalize).join(' ') %>
+			<% if key == "team_name" %>
+				<h1><%= "#{key_name}: #{value}" %></h1>
+			<% else %>
+				<h2><%= "#{key_name}: #{value}" %>
+			<% end %>
+		<% end %>
+		
+	</body>
 </html>
 
 
